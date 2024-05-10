@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import med.voll.api.dto.endereco.CadastroEnderecoDto;
 
 
 @Getter@Setter
@@ -28,4 +29,12 @@ public class Endereco {
     private String complemento;
     @Column(name = "numero", nullable = false)
     private String numero;
+
+    public Endereco(CadastroEnderecoDto dto){
+        logradouro = dto.logradouro();
+        bairro = dto.bairro();
+        cep = dto.cep();
+        cidade
+    }
+
 }
